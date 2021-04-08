@@ -5,9 +5,9 @@ En este repositorio se encuentran todos los laboratorios utilizados en la asigna
 |Índice|
 |:-|
 |:computer: [Pre-Requisitos](#Pre-Requisitos)|
+|:briefcase: [Instrucciones Git](#Instrucciones-Git)|
 |:cactus: [Git Working Tree](#El-Working-Tree-de-Git)|
 |:bookmark_tabs: [Glosario](#Glosario)|
-|:briefcase: [Instrucciones Git](#Instrucciones)|
 |:star2: [Extra](#Extra)|
 
 ## Pre-Requisitos
@@ -17,10 +17,130 @@ En este repositorio se encuentran todos los laboratorios utilizados en la asigna
 |Visual Studio .Net|Entorno para programar. Es deseable tener descargada la última versión|[https://visualstudio.microsoft.com/es/downloads/](https://visualstudio.microsoft.com/es/downloads/)|
 |Git|Sistema de control de versiones distribuido. Multiplataforma y de codigo abierto|[https://git-scm.com/](https://git-scm.com/)|
 |Usuario GitHub|Repositorios online|[https://github.com/join](https://github.com/join?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home)|
-|GitKraken|Control de versiones con repositorios Git locales|[https://www.gitkraken.com/download](https://www.gitkraken.com/download)|
+|***[Recomendado/Opcional]*** GitKraken|Control de versiones con repositorios Git locales|[https://www.gitkraken.com/download](https://www.gitkraken.com/download)|
 
 > Nota: La versión gratuita de GitKraken posee todo lo necesario a utilizar, pero existe para el que le guste la herramienta una versión premium con otras features como: Tener Boards estilo trello y calendarios, entre otras cosas. Se puede conseguir gratuitamente como alumno universitario, teniendo un correo @frro dado de alta en la universidad (Secretaría de Asuntos Universitarios).
 
+### Instalación Visual Studio Community
+
+La parte complicada del proceso consiste en seleccionar que componentes de VS instalar, seleccionar:
+![InstalacionNetComunity_P1](https://user-images.githubusercontent.com/41701343/112885224-e07a1480-90a6-11eb-9292-1a419aa3e7eb.png)
+![InstalacionNetComunity_P2](https://user-images.githubusercontent.com/41701343/112885238-e53ec880-90a6-11eb-9b1e-e6f0fca5c57d.png)
+Recordar destilar la opción de Azure Data Lake ya que esa herramienta no sera de utilidad en este curso
+
+### Instalacion de componentes en caso de faltar alguno despues de la instalación
+> [Documentacion oficial](https://docs.microsoft.com/es-es/visualstudio/install/modify-visual-studio?view=vs-2019)
+
+1. Buscar Visual Studio Installer en la barra de búsqueda de aplicaciones sistema operativo utilizado
+2. En la versión de VS utilizada, clickear en modificar
+3. Si se desea instalar alguna carga de trabajo de las [mencionadas anteriormente](#Instalación-Visual-Studio-Community) clickear en la tab Cargas de Trabajo las correspondientes
+4. [***Recomendado***] Si, en cambio se prefiere buscar por característica individual, ir a la tab Componentes Individuales (arriba al medio) y seleccionar las correspondientes. Ej. NET 5.0 Runtime
+
+## Instrucciones Git
+###### Si se desea tener una base teórica solida sobre Git antes de realizar la ejercitación consultar las secciones [`Git Working Tree`](#El-Working-Tree-de-Git) y [`Glosario`](#Glosario)
+
+La forma de trabajo que se va a utilizar este año consiste en los siguientes pasos:
+> Esta se encuentra inspirada por la forma de trabajo que fue implementada por otros adscriptos en otra materia electiva de la UTN llamada "Soporte a la Gestión de Datos con Programación Visual"
+
+##### IMPORTANTE: Donde diga `practica-2021` remplazar por `Labs`
+
+1. [Forkear](#Fork) el repositorio oficial de practica seleccionando su usuario de GitHub
+
+![tutoGit_P0](https://user-images.githubusercontent.com/41701343/111100579-d2fd5000-8526-11eb-83a3-119c0b2ce18e.png)
+
+
+2. [Clonar](#Clone) el repo forkeado
+
+2.1. Primero copiar al portapapeles la dirección url de este
+
+![tutoGit_P2](https://user-images.githubusercontent.com/41701343/111100784-4606c680-8527-11eb-8e96-e00ed107bb12.png)
+2.2. Luego acceder a GitKraken y copiar la url anterior en el formulario de clonacion
+
+![tutoGit_P3](https://user-images.githubusercontent.com/41701343/111100928-9aaa4180-8527-11eb-8d9b-548e5f562a36.png)
+![tutoGit_P4](https://user-images.githubusercontent.com/41701343/111100985-ba416a00-8527-11eb-9099-341edb9c4c60.png)
+
+***2.2b. En Visual Studio ir a *Git*/*Clonar Repositorio* y proceder de la misma forma***
+
+3. Abrir la carpeta con Visual Studio desde el menú contextual (click derecho)
+
+![tutoGit_P6](https://user-images.githubusercontent.com/41701343/111101096-f674ca80-8527-11eb-9518-2e316b3c6568.png)
+
+4. Cambiar la ubicación predeterminada de los proyectos en Visual Studio
+- Ingresar "ubic" en la *Barra de Búsqueda*
+
+![tutoGit_P7](https://user-images.githubusercontent.com/41701343/111101162-16a48980-8528-11eb-8f06-77e28c36a81b.png)
+- Cambiar la ubicación predeterminada a la dirección donde esta el repositorio clonado previamente
+
+![tutoGit_P8](https://user-images.githubusercontent.com/41701343/111101168-1906e380-8528-11eb-928b-78e6c17394dc.png)
+
+5. Ir a al menú desplegable en *Archivo*/*Nuevo*/*Proyecto*
+![tutoGit_P9](https://user-images.githubusercontent.com/41701343/111101334-6f742200-8528-11eb-886f-e33286c1c9e5.png)
+
+> Al seleccionar el tipo de proyecto revisar que en el titulo este no contenga `(Net Framework)`, ya que estos no permiten seleccionar a NET 5 o NET Core como motor de ejecución
+
+6. Llenar el nombre del laboratorio en el campo *Nombre del Proyecto*, el campo *Nombre de la Solución* se ingresara automáticamente con el mismo valor. 
+- Luego clickear en el selector de archivos correspondiente al campo *Ubicación*
+
+![tutoGit_P10](https://user-images.githubusercontent.com/41701343/111101400-90d50e00-8528-11eb-9f25-9d2ea5fa675f.png)
+- Ingresar la subcarpeta correspondiente a la unidad y el laboratorio en el que se quiera trabajar
+
+![tutoGit_P11](https://user-images.githubusercontent.com/41701343/111101521-dc87b780-8528-11eb-9c76-e42978b920b3.png)
+
+7. Seleccionar NET 5 en el menú de opciones. NOTA: Tener instalado el [runtime](#Instalacion-de-componentes-en-caso-de-faltar-alguno-despues-de-la-instalación)
+
+8. Notar como los nuevos archivos se incluyen en el [Staging Area](#Staging-Area) (sección donde están los archivos marcados) al clickear en stage all changes
+
+![tutoGit_P13](https://user-images.githubusercontent.com/41701343/111101580-faedb300-8528-11eb-88b8-d592ecd8b8f0.png)
+
+***8.b. En VS ir a *Ver*/*Cambios de GIT****
+
+![imagen](https://user-images.githubusercontent.com/41701343/112892379-9ba6ab80-90af-11eb-93ff-801881c83001.png)
+
+9. ***[Recomendado/Opcional]*** Crear una nueva [branch](#Branch) con el siguiente formato: UnidadNLabZ con N y Z igual al numero de unidad y de laboratorio respectivamente
+
+![tutoGit_P14](https://user-images.githubusercontent.com/41701343/111101723-41dba880-8529-11eb-97df-46b6864b6fcf.png)
+
+***9.b. En VS ir a *Git*/*Nueva Rama****
+
+> Es posible [commitear](#Commit) los cambios directamente en [main](#Master), sin embargo esta forma es utilizada si se esta trabajando en solitario, lo cual es bastante poco común
+
+10. [Este paso se repite] [Commitear](#Commit) los cambios escribiendo un mensaje que represente lo realizado, como por ejemplo la inicializacion del proyecto con Visual Studio
+
+![tutoGit_P15](https://user-images.githubusercontent.com/41701343/111101922-a991f380-8529-11eb-9119-cef1a468d9e4.png)
+
+***10.b. En VS ir a *Ver*/*Cambios de GIT* (una vez desplegado se mantiene a la izquierda como opción)***
+
+11. Observar como los commits en la [branch "main"](#Master) están tanto en [local](#Local) (símbolo notebook) como en [remoto](#Remote) (icono del usuario de GitHub). Para cambiar esto [pushear](#Push) los cambios a remoto con el siguiente botón
+
+![tutoGit_P16](https://user-images.githubusercontent.com/41701343/111102098-0e4d4e00-852a-11eb-8c0c-8e009a2a0883.png)
+
+***11.b. No hay equivalente en la UI de VS para GIT***
+
+12. ***[Recomendado/Opcional]*** Una vez que se termino de trabajar con el laboratorio como se observa en la siguiente imagen: 
+
+![tutoGit_P18](https://user-images.githubusercontent.com/41701343/112549216-33e51d80-8d9c-11eb-82ec-a1392966c2a1.png)
+
+[mergear](#Merge) la [branch actual del ejercicio](#Branch) con la [branch main](#Branch) del [repositorio local](#Local), arrastrando la primera hacia la segunda
+
+***12.b. En VS ir a *Ver*/*Repositorio de GIT* y hacer click derecho en la rama del ejercicio para que aparezca el menú desplegable, allí seleccionar la opción resaltada***
+
+![imagen](https://user-images.githubusercontent.com/41701343/112893491-220fbd00-90b1-11eb-954b-f542c174ef6a.png)
+
+
+13. Agregar el repositorio de la asignatura a [remote](#Remote), de manera de que pueda tener los ultimas actualizaciones a los ejercicios y sea capaz de realizar [pull requests](#Pull-Request) a este
+
+![tutoGit_P17](https://user-images.githubusercontent.com/41701343/111102253-697f4080-852a-11eb-8c81-a59aed316325.png)
+
+***13.b. En VS esto ya esta presente por default***
+
+14. [Pullear](#Pull) los últimos cambios presentes en la branch [Main](#Master) del repositorio [remoto](#Remote) de la catedra y [mergear](#Merge) esta con la branch [Main](#Master) del repositorio forkeado local. ![Demostracion en vídeo](https://user-images.githubusercontent.com/41701343/112508562-6d069900-8d6e-11eb-9333-0835db176e1f.mp4)
+
+***14.b. En VS ir a *Ver*/*Repositorio de GIT* y hacer click derecho en la rama main remota para que aparezca el menú desplegable, allí seleccionar la opción resaltada***
+
+![imagen](https://user-images.githubusercontent.com/41701343/112894489-4fa93600-90b2-11eb-9fbe-27750a43c15e.png)
+
+#### Feedback de alumnos
+> Muchas gracias al alumno [Bruno Cocitto](https://github.com/brunococitto) por sus significativos aportes y solicitudes de cambios
 
 ## El Working Tree de Git
 ![git_working_tree](https://user-images.githubusercontent.com/44505076/111569584-b4df5c00-8781-11eb-8ee4-6c2c00ccb8cd.png)
@@ -30,7 +150,6 @@ La carpeta real de archivos físicos se denomina [Working Directory](#Working-Di
 Cuando hay cambios en algunos archivos, pero estos aún no han sido incluidos en un [commit](#Commit), estos estan en el [Staging Area](#Staging-Area) (que representa a todos los archivos que git detectó una diferencia con respecto al último [commit](#Commit) que posee en nuestro repositorio local). Con lo que está allí podemos realizar un [commit](#Commit) para que sea agregado oficialmente a nuestro repo local o remover estos cambios de este area y dejar los archivos como estaban antes.
 
 El repositorio que se encuentra almacenado en GitHub (u otra plataforma) para todos los miembros del equipo se denomina [Repositorio Remoto](#Remote), referenciado como ***Origin***. Git también rastrea la diferencia entre nuestro repositorio local y el remoto. Es posible traer ([pull](#Pull)) al [repositorio local](#Local) los [commits](#Commit) que hayan subido al [remoto](#Remote) otros compañeros, así como subir ([push](#Push)) [commits](#Commit) en el sentido inverso al anterior y mantenernos sincronizados.
-
 
 ## Glosario
 
@@ -109,76 +228,16 @@ El repositorio que se encuentra almacenado en GitHub (u otra plataforma) para to
 
 > Otra guía sencilla (está tanto en español como en inglés) sobre Git pero haciendo uso de la Consola, consultar: [https://rogerdudler.github.io/git-guide/index.es.html](https://rogerdudler.github.io/git-guide/index.es.html) del usuario de GitHub [https://github.com/rogerdudler/](https://github.com/rogerdudler/).
 
-
-## Instrucciones Git
-La forma de trabajo que se va a utilizar este año consiste en los siguientes pasos:
-> Esta se encuentra inspirada por la forma de trabajo que fue implementada por otros adscriptos en otra materia electiva de la UTN llamdada "Soporte a la Gestión de Datos con Programación Visual"
-
-##### IMPORTANTE: Donde diga `practica-2021` remplazar por `Labs`
-
-1. [Forkear](#Fork) el repositorio oficial de practica seleccionando su usuario de GitHub
-![tutoGit_P0](https://user-images.githubusercontent.com/41701343/111100579-d2fd5000-8526-11eb-83a3-119c0b2ce18e.png)
-
-2. [Clonar](#Clone) el repo forkeado
-- Primero copiar al portapapeles la dirección url de este
-![tutoGit_P2](https://user-images.githubusercontent.com/41701343/111100784-4606c680-8527-11eb-8e96-e00ed107bb12.png)
-- Luego acceder a GitKraken y copiar la url anterior en el formulario de clonacion
-![tutoGit_P3](https://user-images.githubusercontent.com/41701343/111100928-9aaa4180-8527-11eb-8d9b-548e5f562a36.png)
-![tutoGit_P4](https://user-images.githubusercontent.com/41701343/111100985-ba416a00-8527-11eb-9099-341edb9c4c60.png)
-
-3. Abrir la carpeta con Visual Studio desde el menú contextual (click derecho)
-![tutoGit_P6](https://user-images.githubusercontent.com/41701343/111101096-f674ca80-8527-11eb-9518-2e316b3c6568.png)
-
-4. Cambiar la ubicación predeterminada de los proyectos en Visual Studio
-- Ingresar "ubic" en la *Barra de Búsqueda*
-![tutoGit_P7](https://user-images.githubusercontent.com/41701343/111101162-16a48980-8528-11eb-8f06-77e28c36a81b.png)
-- Cambiar la ubicación predeterminada a la dirección donde esta el repositorio clonado previamente
-![tutoGit_P8](https://user-images.githubusercontent.com/41701343/111101168-1906e380-8528-11eb-928b-78e6c17394dc.png)
-
-5. Ir a al menú desplegable en *Archivo*/*Nuevo*/*Proyecto*
-![tutoGit_P9](https://user-images.githubusercontent.com/41701343/111101334-6f742200-8528-11eb-886f-e33286c1c9e5.png)
-
-6. Llenar el nombre del laboratorio en el campo *Nombre del Proyecto*, el campo *Nombre de la Solución* se ingresara automáticamente con el mismo valor. 
-- Luego clickear en el selector de archivos correspondiente al campo *Ubicación*
-![tutoGit_P10](https://user-images.githubusercontent.com/41701343/111101400-90d50e00-8528-11eb-9f25-9d2ea5fa675f.png)
-- Ingresar la subcarpeta correspondiente a la unidad y el laboratorio en el que se quiera trabajar
-![tutoGit_P11](https://user-images.githubusercontent.com/41701343/111101521-dc87b780-8528-11eb-9c76-e42978b920b3.png)
-
-7. Seleccionar NET 5 en el menú de opciones
-
-8. Notar como los nuevos archivos se incluyen en el [Staging Area](#Staging-Area) (sección donde están los archivos marcados) y clickear en stage all changes
-![tutoGit_P13](https://user-images.githubusercontent.com/41701343/111101580-faedb300-8528-11eb-88b8-d592ecd8b8f0.png)
-
-9. Crear una nueva [branch](#Branch) con el siguiente formato: UnidadNLabZ con N y Z igual al numero de unidad y de laboratorio respectivamente
-![tutoGit_P14](https://user-images.githubusercontent.com/41701343/111101723-41dba880-8529-11eb-97df-46b6864b6fcf.png)
-
-10. [Este paso se repite] [Commitear](#Commit) los cambios escribiendo un mensaje que represente lo realizado, como por ejemplo la inicializacion del proyecto con Visual Studio
-![tutoGit_P15](https://user-images.githubusercontent.com/41701343/111101922-a991f380-8529-11eb-9119-cef1a468d9e4.png)
-
-11. Observar como los commits en la [branch "main"](#Master) están tanto en [local](#Local) (símbolo notebook) como en [remoto](#Remote) (icono del usuario de GitHub). Para cambiar esto [pushear](#Push) los cambios a remoto con el siguiente botón
-![tutoGit_P16](https://user-images.githubusercontent.com/41701343/111102098-0e4d4e00-852a-11eb-8c0c-8e009a2a0883.png)
-
-12. Una vez que se termino de trabajar con el laboratorio como se observa en la siguiente imagen: 
-![tutoGit_P18](https://user-images.githubusercontent.com/41701343/112549216-33e51d80-8d9c-11eb-82ec-a1392966c2a1.png)
-[mergear](#Merge) la [branch actual del ejercicio](#Branch) con la [branch main](#Branch) del [repositorio local](#Local), arrastrando la primera hacia la segunda
-
-
-13. Agregar el repositorio de la asignatura a [remote](#Remote), de manera de que pueda tener los ultimas actualizaciones a los ejercicios y sea capaz de realizar [pull requests](#Pull-Request) a este
-![tutoGit_P17](https://user-images.githubusercontent.com/41701343/111102253-697f4080-852a-11eb-8c81-a59aed316325.png)
-
-14. [Pullear](#Pull) los ultimos cambios presentes en la branch [Main](#Master) del repositorio [remoto](#Remote) de la catedra y [mergear](#Merge) esta con la branch [Main](#Master) del repositorio forkeado local. ![Demostracion en vídeo](https://user-images.githubusercontent.com/41701343/112508562-6d069900-8d6e-11eb-9333-0835db176e1f.mp4)
-
-
 ## Extra
 
 ### Reset
-> Si queremos deshacer cambios locales que aún no hemos enviado al remoto, podemos realizar un "reset" de nuestros cambios. El reset puede revertir uno o más commmits locales. En Gitkraken se hace un reset tocando el ícono de la papelera al lado de nuestros cambios. Hay 3 tipos de reset. El `git reset --soft` que solamente mueve "HEAD" hacia atrás sin borrar los cambios, es solo para ver nuestro codigo en una version anterior antes de los cambios; el `git reset --mixed` (el default) que borrará la cantidad de commits que le indiquemos, pero los cambios no se pierden sino que se vuelven al "Staging Area" y nos dejará hacer nuevos commits; y el `git reset --hard` que es peligroso pues borra directamente la cantidad de commits solicitados y estos se "pierden para siempre".
+> Si se quiere deshacer cambios locales que aún no se han enviado al remoto, es posible realizar un "reset" de nuestros cambios. El reset puede revertir uno o más commmits locales. En Gitkraken se hace un reset tocando el ícono de la papelera al lado de nuestros cambios. Hay 3 tipos de reset. El `git reset --soft` que solamente mueve "HEAD" hacia atrás sin borrar los cambios, es solo para ver nuestro codigo en una version anterior antes de los cambios; el `git reset --mixed` (el default) que borrará la cantidad de commits que le indiquemos, pero los cambios no se pierden sino que se vuelven al "Staging Area" y se dejará hacer nuevos commits; y el `git reset --hard` que es peligroso pues borra directamente la cantidad de commits solicitados y estos se "pierden para siempre".
 
 ### Stash
-> Si tenemos cambios sin commitear y cambiamos de [branch](#Branch), podemos "guardarlos" temporalmente en un "vault" llamado Stash. Más adelante si los necesitamos de vuelta en la misma branch u otra, se realiza un Stash Pop que recupera el código y lo coloca devuelta en [Staging Area](#Staging-Area).
+> Si hay cambios sin commitear y se quiere cambiar de [branch](#Branch), es posible "guardarlos" temporalmente en un "vault" llamado Stash. Más adelante si son necesarios nuevamente en la misma branch u otra, se realiza un Stash Pop que recupera el código y lo coloca devuelta en [Staging Area](#Staging-Area).
 
 ### Fetch
-> Traer los cambios del repositorio [remoto](#Remote) al [local](#Local), pero sin reemplazar los archivos físicos. Esto es para visualizar los cambios pero sin reemplazarlos aún (a diferencia de [Pull](#Pull)), pues a lo mejor queremos hacer otra tarea antes de reemplazarlos. Podría decirse que, en el fondo, un [Pull](#Pull) es un [Fetch](#Fetch) + un [Merge](#Merge) a nuestros archivos locales.
+> Traer los cambios del repositorio [remoto](#Remote) al [local](#Local), pero sin reemplazar los archivos físicos. Esto es para visualizar los cambios pero sin reemplazarlos aún (a diferencia de [Pull](#Pull)), pues a lo mejor se quiere hacer otra tarea antes de reemplazarlos. Podría decirse que, en el fondo, un [Pull](#Pull) es un [Fetch](#Fetch) + un [Merge](#Merge) a nuestros archivos locales.
 
 ### Rebase
-> Un rebase modifica la historia de [commits](#Commit) de nuestro repositorio, por lo tanto es peligroso. Podemos necesitarlo por ejemplo cuando creamos commits incorrectos y queremos cambiarlos, pero estos ya los subimos al remoto con [push](#Push) y nos arrepentimos. Con rebase se puede cambiar el nombre de [commits](#Commit) en remoto, unificarlos diferentes en uno o borrarlos, entre otras cosas. Estando en la branch en la que queremos modificar (se recomienda antes crear otra branch desde el ultimo commit para tener una "copia de seguridad") se debe escribir `git rebase -i HEAD~n`, donde n se debe reemplazar por la cantidad de commits que se van a ver afectados por el rebase, y la -i nos indica que será un rebase interactivo (te da instrucciones de que se puede hacer con cada commit, sea unificar, renobrar, borrar, etc..
+> Un rebase modifica la historia de [commits](#Commit) del repositorio, por lo tanto es peligroso. Tal vez se necesite por ejemplo cuando se crean commits incorrectos y se quiere cambiarlos, pero estos ya estan subidos al remoto con [push](#Push). Con rebase se puede cambiar el nombre de [commits](#Commit) en remoto, unificarlos diferentes en uno o borrarlos, entre otras cosas. Estando en la branch en la que se desea modificar esto (se recomienda antes crear otra branch desde el ultimo commit para tener una "copia de seguridad") se debe escribir `git rebase -i HEAD~n`, donde n se debe reemplazar por la cantidad de commits que se van a ver afectados por el rebase, y la -i indica que será un rebase interactivo (da instrucciones de que se puede hacer con cada commit, sea unificar, renombrar, borrar, etc... por lo tanto es peligroso. Podemos necesitarlo por ejemplo cuando creamos commits incorrectos y queremos cambiarlos, pero estos ya los subimos al remoto con [push](#Push) y nos arrepentimos. Con rebase se puede cambiar el nombre de [commits](#Commit) en remoto, unificarlos diferentes en uno o borrarlos, entre otras cosas. Estando en la branch en la que queremos modificar (se recomienda antes crear otra branch desde el ultimo commit para tener una "copia de seguridad") se debe escribir `git rebase -i HEAD~n`, donde n se debe reemplazar por la cantidad de commits que se van a ver afectados por el rebase, y la -i nos indica que será un rebase interactivo (te da instrucciones de que se puede hacer con cada commit, sea unificar, renombrar, borrar, etc..
