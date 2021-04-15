@@ -25,7 +25,14 @@ namespace LabSintaxis2
                     }
                     else
                     {
-                        Console.WriteLine("Conversion:" + inputTexto.ToLower());
+                        if (opcion.Key == ConsoleKey.D2)
+                        {
+                            Console.WriteLine("Conversion:" + inputTexto.ToLower());
+                        }
+                        else
+                        {
+                            Console.WriteLine("Opcion incorrecta");
+                        }
                     }
                 }
             }
