@@ -37,7 +37,7 @@ namespace Web.Models
         }
         public UsuarioLogeado? Validar(LoginViewModel loginVM)
         {
-            var user = _usuarios.Find(u => "completar");
+            var user = _usuarios.Find(u => u.Mail == loginVM.Mail);
 
             return user == null? null : new UsuarioLogeado(id: user.Id, nombre: user.Nombre, mail: user.Mail);
         }
