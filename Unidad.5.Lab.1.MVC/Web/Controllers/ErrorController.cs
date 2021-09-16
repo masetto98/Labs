@@ -19,7 +19,7 @@ namespace Web.Controllers
         [Route("/error/401")]
         public IActionResult NotAuthorized() => View();
 
-        [Route("/error/403")]
+        [Route("/error/404")]
         public IActionResult NotFoundError() => View();
 
         [Route("/error/{code:int}")]

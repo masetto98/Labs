@@ -19,7 +19,7 @@ namespace Web.Models
         public LoginValidator()
         {
             RuleFor(l => l.Mail).NotEmpty().EmailAddress();
-            RuleFor(l => l.Password).NotEmpty();
+            RuleFor(l => l.Clave).NotEmpty();
         }
     }
 }
