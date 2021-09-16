@@ -1,4 +1,4 @@
-﻿@model CreateMateriaViewModel
+@model CreateMateriaViewModel
 
 
 
@@ -9,5 +9,6 @@
 </div>
 
 @section Scripts {
+    // Necesario para ejecutar las validaciones en el navegador (el cliente), ademas de en el servidor
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
